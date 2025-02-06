@@ -454,6 +454,10 @@
         .payment-icons i {
             margin-right: 10px;
             font-size: 18px;
+            cursor: pointer;
+        }
+        .we-accept-nav{
+            cursor: pointer;
         }
 
         .nav-links {
@@ -673,19 +677,6 @@
         .carousel-indicator-main .dot.active {
             background-color: red;
         }
-        /* .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .hero img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        } */
 
         .carousel {
             display: flex;
@@ -705,11 +696,13 @@
             min-width: 200px;
             text-align: center;
             margin: 0 15px;
+            cursor: pointer;
         }
 
         .carousel-item img {
             width: 150px;
             height: auto;
+            cursor: pointer;
         }
 
         .carousel-arrow {
@@ -906,8 +899,6 @@
             cursor: pointer;
         }
 
-
-
         .signup-section-foot{
             display: flex;
             justify-content: center;
@@ -1048,34 +1039,34 @@
 <body>
     <header>
         <div class="top-bar">
-            <marquee behavior="scroll" direction="left">FREE SHIPPING FOR ORDERS OVER PAKISTAN</marquee>
+            <marquee behavior="scroll" direction="left">☆FREE SHIPPING FOR ORDERS OVER PAKISTAN☆</marquee>
         </div>
         <nav class="navbar">
-            <div class="logo"><img src="assets/tinysmall.png" alt="ROG Logo"><a href="index.html">ELITE</a><span class="highlight"> |
+            <div class="logo"><a href="index.html"><img src="assets/tinysmall.png" alt="ROG Logo" title="ROG GAMERS"></a><a href="index.html" title="Elite" >ELITE</a><span class="highlight" title="Store"> |
                     STORE</span></div>
             <div class="payment-icons">
-                <span>We Accept</span>
+                <span title="We Accept" class="we-accept-nav">We Accept</span>
                 <i class="fab fa-bitcoin"></i>
                 <i class="fas fa-dollar-sign"></i>
-                <i class="fab fa-ethereum"></i>
+                <i class="fas fa-rupee-sign"></i>
             </div>
             <ul class="nav-links">
-                <li><a href="#">All Products</a></li>
+                <li><a href="#" title="All Products">All Products</a></li>
                 <li>
                     <form class="search-bar">
                         <input type="text" placeholder="Search..." />
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </li>
-                <li><a href="#">Collections</a></li>
+                <li><a href="#" title="Collection">Collections</a></li>
                 <li class="dropdown">
-                    <a href="#">Categories ⬇</a>
+                    <a href="#" title="Categories">Categories ⬇</a>
                     <div class="dropdown-content">
-                        <a href="#">Gaming Laptops</a>
-                        <a href="#">Business Laptops</a>
-                        <a href="#">Student Laptops</a>
-                        <a href="#">2-in-1 Laptops</a>
-                        <a href="#">MacBooks</a>
+                        <a href="#" title="Gaming laptops">Gaming Laptops</a>
+                        <a href="#" title="Business Laptop">Business Laptops</a>
+                        <a href="#" title="Student laptop">Student Laptops</a>
+                        <a href="#" title="2-in-1 laptop">2-in-1 Laptops</a>
+                        <a href="#" title="MacBooks">MacBooks</a>
                     </div>
                 </li>
                 <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
@@ -1150,27 +1141,27 @@
         <div class="product-card">
             <img src="https://dlcdnwebimgs.asus.com/gain/31E0CE80-2EF1-4914-ABFF-B08DF7FB2CDC/w750/h470" alt="Rog Flow">
             <h3>ROG FOLOW</h3>
-            <p class="price">$888 USD</p>
+            <p class="price">450000 <i class="fas fa-rupee-sign"></i></p>
             <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
         </div>
         <div class="product-card">
             <img src="https://dlcdnwebimgs.asus.com/gain/251BB9FE-CD1A-4F9F-AA69-F0516CAF410A/w750/h470"
                 alt="Rog Zephyrus">
             <h3>ROG ZEPHYRUS</h3>
-            <p class="price">$1000 USD</p>
+            <p class="price">950000  <i class="fas fa-rupee-sign"></i></p>
             <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
         </div>
         <div class="product-card">
             <img src="https://dlcdnwebimgs.asus.com/gain/0075CD12-E145-49F5-916C-EF86E8691207/w750/h470"
                 alt="Rog Strix">
             <h3>ROG STRIX</h3>
-            <p class="price">$850 USD</p>
+            <p class="price">1200000  <i class="fas fa-rupee-sign"></i></p>
             <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
         </div>
         <div class="product-card">
             <img src="https://dlcdnrog.asus.com/rog/media/1654040596988.webp" alt="Rog Flow Z13">
             <h3>ROG FOLOW Z13</h3>
-            <p class="price">$3500 USD</p>
+            <p class="price">550000  <i class="fas fa-rupee-sign"></i></p>
             <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
         </div>
     </div>
