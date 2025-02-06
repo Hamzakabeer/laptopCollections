@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Footer</title>
+    <title>Full Screen Image Carousel</title>
     <style>
         * {
             margin: 0;
@@ -11,148 +11,171 @@
             box-sizing: border-box;
         }
 
-        body {
+        body, html {
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
         }
 
-        footer {
-            background-color: #000;
-            padding: 20px;
-            text-align: center;
+        .main-carousel-front {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 60px);  /* Adjusted height to account for header */
+            overflow: hidden;
         }
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
+        .caraousel-slider-main {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        .social-icon-foot {
-            display: flex;
-            justify-content: center;
-            margin: 15px 0;
+        .caraousel-slider-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* Ensure the full image is visible without cropping */
         }
 
-        .social-icon-foot img {
-            width: 24px;
-            height: 24px;
-            margin: 0 10px;
+        .caraousel-slider-main.active {
+            display: block;
         }
 
-        .signup-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .signup-section input[type="email"] {
-            padding: 10px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-            width: 250px;
-        }
-
-        .signup-section button {
-            padding: 10px 20px;
-            border: none;
-            background-color: red;
+        .carousel-arrow-main {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
             color: white;
             cursor: pointer;
-            border-radius: 0 4px 4px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 10;
         }
 
-        .footer-bottom {
+        .carousel-arrow-main.left {
+            left: 10px;
+        }
+
+        .carousel-arrow-main.right {
+            right: 10px;
+        }
+
+        .carousel-indicators-main {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 8px;
         }
 
-        .footer-bottom img {
-            width: 100px;
+        .carousel-indicators-main .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
         }
 
-        .footer-bottom div {
-            margin: 10px 0;
+        .carousel-indicators-main .dot.active {
+            background-color: red;
         }
 
-        @media (max-width: 600px) {
-            .signup-section {
-                flex-direction: column;
+        @media (max-width: 768px) {
+            .carousel-arrow-main {
+                font-size: 24px;
+                padding: 8px;
             }
 
-            .signup-section input[type="email"] {
-                width: 100%;
-                border-radius: 4px;
-                margin-bottom: 10px;
+            .carousel-indicators-main .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-arrow-main {
+                font-size: 20px;
+                padding: 6px;
             }
 
-            .signup-section button {
-                width: 100%;
-                border-radius: 4px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
+            .carousel-indicators-main .dot {
+                width: 8px;
+                height: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <footer>
-        <div>
-            <a href="#">ABOUT ROG</a>
-            <a href="#">HOME</a>
-            <a href="#">NEWSROOM</a>
-            <a href="#">ACCESSIBILITY HELP</a>
+    <!-- Header Placeholder -->
+    <header style="height: 60px; background-color: #333; color: white; display: flex; align-items: center; padding: 0 20px;">
+        <h1>Website Header</h1>
+    </header>
+
+    <!-- Carousel Section -->
+    <div class="main-carousel-front">
+        <div class="caraousel-slider-main active">
+            <img src="assets/maincover.jpg" alt="Slide 1">
+        </div>
+        <div class="caraousel-slider-main">
+            <img src="assets/image2.jpg" alt="Slide 2">
+        </div>
+        <div class="caraousel-slider-main">
+            <img src="assets/image3.jpg" alt="Slide 3">
         </div>
 
-        <div class="social-icon-foot">
-            <img src="" alt="Facebook">
-            <img src="" alt="X (Twitter)">
-            <img src="" alt="Gaming Controller">
-            <img src="" alt="YouTube">
-            <img src="" alt="Twitch">
-            <img src="" alt="Instagram">
-            <img src="" alt="TikTok">
-            <img src="" alt="Globe">
+        <!-- Navigation Arrows -->
+        <div class="carousel-arrow-main left">&#10094;</div>
+        <div class="carousel-arrow-main right">&#10095;</div>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators-main">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
+    </div>
 
-        <div class="signup-section">
-            <label for="email">GET THE LATEST DEALS AND MORE</label>
-            <input type="email" id="email" placeholder="Enter email address">
-            <button>SIGN UP</button>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.caraousel-slider-main');
+            const dots = document.querySelectorAll('.dot');
+            const prev = document.querySelector('.carousel-arrow-main.left');
+            const next = document.querySelector('.carousel-arrow-main.right');
 
-        <div class="footer-bottom">
-            <div>
-                <a href="#">PRIVACY POLICY</a>
-                <a href="#">TERMS OF USE NOTICE</a>
-                <a href="#">COOKIE SETTINGS</a>
-            </div>
+            let currentIndex = 0;
 
-            <img src="" alt="ROG Logo">
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                    dots[i].classList.toggle('active', i === index);
+                });
+            }
 
-            <div>
-                ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
-            </div>
-        </div>
-    </footer>
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    showSlide(currentIndex);
+                });
+            });
+
+            next.addEventListener('click', nextSlide);
+            prev.addEventListener('click', prevSlide);
+
+            setInterval(nextSlide, 5000);  // Auto-slide every 5 seconds
+        });
+    </script>
 </body>
 </html>
-
-.social-icons-foot {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-}
-
-.social-icons-foot i {
-    font-size: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-}
