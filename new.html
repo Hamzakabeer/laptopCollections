@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Articles</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container-middle {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        .article {
+            display: flex;
+            align-items: center;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .article img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .article-content {
+            text-align: left;
+        }
+        .article h3 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .article p {
+            font-size: 14px;
+            color: #bbb;
+        }
+        .post-tag {
+            color: red;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        /* Responsive Design for Mobile Phones */
+        @media (max-width: 768px) {
+            .container-middle {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .article {
+                flex-direction: column;
+                text-align: center;
+            }
+            .article img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>RELATED ARTICLES</h2>
+    <div class="container-middle">
+        <div class="article">
+            <img src="" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>Zephyrus vs Strix vs Flow: What's the difference between ROG laptops?</h3>
+                <p>ROG builds laptops for every kind of gamer. Find out which one is right for you!</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>How to set up and optimize your new ROG gaming laptop</h3>
+                <p>We know you're eager to get fragging right away. But if you want to truly customize your experience, here's how to tune your machine for peak power.</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>Unbridled gaming power and unlimited versatility: hands-on with the ROG Flow Z13</h3>
+                <p>We go hands-on with the ROG Flow Z13 gaming tablet to experience truly portable PC gaming.</p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>The new ROG Flow X16 melds premium power with a portable design</h3>
+                <p>ROG amps up mobile portability and versatility with the powerful all-new Flow X16.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
