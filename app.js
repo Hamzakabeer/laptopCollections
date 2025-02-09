@@ -104,7 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 alert("Welcome Our Website");
 
-document.getElementById("popupunderconstruct").onclick = function() {
+document.getElementById("popupunderconstruct-cart").onclick = function() {
+    alert("shopping cart feature on a website is currently unavailable");
+};
+document.getElementById("popupunderconstruct-slider-items").onclick = function() {
     alert("temporarily unavailable for updates, repairs, or improvements");
 };
 document.getElementById("popupunderconstruct-currency").onclick = function() {
@@ -113,6 +116,8 @@ document.getElementById("popupunderconstruct-currency").onclick = function() {
 document.getElementById("popupunderconstruct-search").onclick = function() {
     alert("!!! Warning");
 };
+
+
 
 document.getElementById("signup-btn").addEventListener("click", function() {
     var email = document.getElementById("email").value;
@@ -124,7 +129,5 @@ document.getElementById("signup-btn").addEventListener("click", function() {
 
     var subject = "Sign Up for Latest Deals";
     var body = "Hello,\n\nI want to sign up for the latest deals. My email: " + email;
-
-    // Open email client
     window.location.href = "mailto:someone@example.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 });

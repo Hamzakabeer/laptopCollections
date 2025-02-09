@@ -468,7 +468,12 @@ body {
     background: rgba(0, 0, 0, 0.6);
    
 }
-
+.banner-under-construct img{
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
 .banner img {
     width: 100%;
     height: auto;

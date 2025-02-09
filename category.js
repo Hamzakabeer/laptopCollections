@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("category-title").innerText = category.replace("-", " ").toUpperCase();
 
         // Example: Load relevant content dynamically
-        document.getElementById("category-content").innerHTML = `<p>Welcome to the ${category.replace("-", " ")} section. Here are some top products...</p>`;
+        document.getElementById("category-content").innerHTML = `<p>Welcome to the ${category.replace("-", " ")} section. Here are some top products, Upcoming Soon...</p>`;
     }
 });
