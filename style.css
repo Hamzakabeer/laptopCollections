@@ -42,9 +42,10 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
 .logo a {
-   text-decoration: none;
-   color: #ffff;
+    text-decoration: none;
+    color: #ffff;
 }
 
 
@@ -58,7 +59,8 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
-.we-accept-nav{
+
+.we-accept-nav {
     cursor: pointer;
 }
 
@@ -147,7 +149,8 @@ body {
 .main-carousel-front {
     position: relative;
     width: 100%;
-    height: calc(100vh - 60px);  /* Adjusted height to account for header */
+    height: calc(100vh - 60px);
+    /* Adjusted height to account for header */
     overflow: hidden;
 }
 
@@ -162,7 +165,8 @@ body {
 .caraousel-slider-main img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Ensure the full image is visible without cropping */
+    object-fit: contain;
+    /* Ensure the full image is visible without cropping */
 }
 
 .caraousel-slider-main.active {
@@ -180,7 +184,8 @@ body {
     border-radius: 50%;
     z-index: 10;
 }
-.carousel-arrow-main:hover{
+
+.carousel-arrow-main:hover {
     color: red;
 }
 
@@ -220,7 +225,8 @@ body {
 .main-carousel-cover {
     position: relative;
     width: 100%;
-    height: 100vh;  /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     overflow: hidden;
 }
 
@@ -234,7 +240,8 @@ body {
 .carousel-slider-main img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Make sure the image covers the entire area */
+    object-fit: cover;
+    /* Make sure the image covers the entire area */
 }
 
 .carousel-slider-main.active {
@@ -466,14 +473,16 @@ body {
     justify-content: center;
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
-   
+
 }
-.banner-under-construct img{
+
+.banner-under-construct img {
     width: 100%;
     height: auto;
     max-height: 500px;
     object-fit: cover;
 }
+
 .banner img {
     width: 100%;
     height: auto;
@@ -481,44 +490,48 @@ body {
     object-fit: cover;
     border-radius: 10px;
 }
+
 /* Container for Cards */
 .footer-upper-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-  }
+}
 
-  /* Individual Card */
-  .footer-upper-card {
-    width: calc(25% - 20px); /* 4 cards per row on larger screens */
+/* Individual Card */
+.footer-upper-card {
+    width: calc(25% - 20px);
+    /* 4 cards per row on larger screens */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+}
 
-  .footer-upper-card:hover {
+.footer-upper-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  /* Image Section */
-  .footer-upper-card img {
+/* Image Section */
+.footer-upper-card img {
     width: 100%;
     height: auto;
     display: block;
-  }
+}
 
 
 footer {
-    width: 100vw;  /* Full viewport width */
-margin: 0;
-padding: 20px 0;
-background-color: #000;
-color: white;
-text-align: center;
-box-sizing: border-box;
+    width: 100vw;
+    /* Full viewport width */
+    margin: 0;
+    padding: 20px 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
 }
+
 footer a {
     color: #fff;
     text-decoration: none;
@@ -537,7 +550,7 @@ footer a {
     cursor: pointer;
 }
 
-.signup-section-foot{
+.signup-section-foot {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,17 +582,25 @@ footer a {
 }
 
 .footer-bottom img {
+    display: flex;
+    justify-content: center;
     width: 100px;
 }
 
 .footer-bottom div {
     margin: 10px 0;
 }
+
 @media (max-width: 1200px) {
     .footer-upper-card {
-      width: calc(33.33% - 20px); /* 3 cards per row on medium screens */
+        width: calc(33.33% - 20px);
     }
-  }
+
+    .footer-bottom img {
+        display: block;
+        margin: 0 auto;
+    }
+}
 
 @media (max-width: 768px) {
     .navbar {
@@ -598,6 +619,7 @@ footer a {
     .search-bar {
         margin-top: 10px;
     }
+
     .carousel-arrow-main {
         font-size: 24px;
         padding: 8px;
@@ -607,6 +629,7 @@ footer a {
         width: 10px;
         height: 10px;
     }
+
     .product-container {
         flex-direction: column;
         align-items: center;
@@ -634,8 +657,8 @@ footer a {
     }
 
     .footer-upper-card {
-        width: calc(50% - 20px); /* 2 cards per row on tablets */
-      }
+        width: calc(50% - 20px);
+    }
 
     .signup-section-foot {
         flex-direction: column;
@@ -655,7 +678,13 @@ footer a {
     .footer-bottom {
         flex-direction: column;
     }
+
+    .footer-bottom img {
+        display: block;
+        margin: 0 auto;
+    }
 }
+
 @media (max-width: 600px) {
     .carousel-item {
         min-width: 150px;
@@ -664,8 +693,24 @@ footer a {
     .carousel-item img {
         width: 100px;
     }
+
+    .footer-bottom img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer a {
+        display: block;
+        margin: 0 auto;
+    }
 }
+
 @media (max-width: 480px) {
+    .footer a {
+        display: block;
+        margin: 0 auto;
+    }
+
     .carousel-arrow-main {
         font-size: 20px;
         padding: 6px;
@@ -675,7 +720,13 @@ footer a {
         width: 8px;
         height: 8px;
     }
+
     .footer-upper-card {
-        width: 100%; /* 1 card per row on mobile */
-      }
+        width: 100%;
+    }
+
+    .footer-bottom img {
+        display: block;
+        margin: 0 auto;
+    }
 }
