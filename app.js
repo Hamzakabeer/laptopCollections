@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 5000);  
 });
 
-
-
-
-
 const carouselContainer = document.querySelector('.carousel-container');
 const carouselItems = document.querySelectorAll('.carousel-item');
 const indicators = document.querySelectorAll('.carousel-indicators div');
@@ -89,3 +85,46 @@ updateCarousel();
 // let search = prompt("Enter your collections");
 
 // console.log([eliteLaptopsCollections[search]]);
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all dropdown links
+    let categoryLinks = document.querySelectorAll(".dropdown-content a");
+
+    categoryLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Stop default action
+            
+            let category = this.getAttribute("data-category"); // Get category name
+            
+            // Redirect to category page with query string
+            window.location.href = `category.html?category=${category}`;
+        });
+    });
+});
+
+alert("Welcome Our Website");
+
+document.getElementById("popupunderconstruct").onclick = function() {
+    alert("temporarily unavailable for updates, repairs, or improvements");
+};
+document.getElementById("popupunderconstruct-currency").onclick = function() {
+    alert("UpComing Soon");
+};
+document.getElementById("popupunderconstruct-search").onclick = function() {
+    alert("!!! Warning");
+};
+
+document.getElementById("signup-btn").addEventListener("click", function() {
+    var email = document.getElementById("email").value;
+    
+    if (email === "") {
+        alert("Please enter your email address.");
+        return;
+    }
+
+    var subject = "Sign Up for Latest Deals";
+    var body = "Hello,\n\nI want to sign up for the latest deals. My email: " + email;
+
+    // Open email client
+    window.location.href = "mailto:someone@example.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+});

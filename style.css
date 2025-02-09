@@ -173,13 +173,15 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 30px;
+    font-size: 50px;
     color: white;
     cursor: pointer;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     z-index: 10;
+}
+.carousel-arrow-main:hover{
+    color: red;
 }
 
 .carousel-arrow-main.left {
@@ -187,7 +189,7 @@ body {
 }
 
 .carousel-arrow-main.right {
-    right: 10px;
+    right: 21px;
 }
 
 .carousel-indicators-main {
@@ -287,6 +289,7 @@ body {
     margin: 20px auto;
     width: 80%;
     max-width: 800px;
+    cursor: pointer;
 }
 
 .carousel-container {
@@ -311,9 +314,9 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
+    font-size: 50px;
     cursor: pointer;
-    color: red;
+    color: rgb(118, 243, 107);
     z-index: 10;
 }
 
@@ -473,6 +476,34 @@ body {
     object-fit: cover;
     border-radius: 10px;
 }
+/* Container for Cards */
+.footer-upper-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Individual Card */
+  .footer-upper-card {
+    width: calc(25% - 20px); /* 4 cards per row on larger screens */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .footer-upper-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Image Section */
+  .footer-upper-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
 
 footer {
     width: 100vw;  /* Full viewport width */
@@ -486,7 +517,7 @@ box-sizing: border-box;
 footer a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 21px;
 }
 
 .social-icons-foot {
@@ -539,6 +570,11 @@ footer a {
 .footer-bottom div {
     margin: 10px 0;
 }
+@media (max-width: 1200px) {
+    .footer-upper-card {
+      width: calc(33.33% - 20px); /* 3 cards per row on medium screens */
+    }
+  }
 
 @media (max-width: 768px) {
     .navbar {
@@ -592,6 +628,10 @@ footer a {
         margin-bottom: 10px;
     }
 
+    .footer-upper-card {
+        width: calc(50% - 20px); /* 2 cards per row on tablets */
+      }
+
     .signup-section-foot {
         flex-direction: column;
     }
@@ -630,4 +670,7 @@ footer a {
         width: 8px;
         height: 8px;
     }
+    .footer-upper-card {
+        width: 100%; /* 1 card per row on mobile */
+      }
 }
