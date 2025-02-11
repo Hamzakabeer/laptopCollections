@@ -1,3 +1,97 @@
+    const brandBtn = document.getElementById("brand-btn");
+    const brandMenu = document.getElementById("brand-menu");
+    const configBtn = document.getElementById("config-btn");
+    const configMenu = document.getElementById("config-menu");
+    
+    const configurations = {
+        "DELL": { "XPS 13": "xps13.jpg", "XPS 15": "xps15.jpg", "Inspiron 14": "inspiron14.jpg", "Inspiron 15": "inspiron15.jpg" },
+        "HP": { "Pavilion 14": "pavilion14.jpg", "Pavilion 15": "pavilion15.jpg", "Spectre x360": "spectre.jpg", "Omen 16": "omen16.jpg" },
+        "ROG": { "Zephyrus G14": "zephyrusg14.jpg", "Zephyrus G15": "zephyrusg15.jpg", "Strix Scar 17": "strixscar17.jpg", "Strix G16": "strixg16.jpg" },
+        "LENOVO": { "ThinkPad X1": "thinkpadx1.jpg", "ThinkPad T14": "thinkpadt14.jpg", "Legion 5": "legion5.jpg", "Legion 7": "legion7.jpg" },
+        "MACBOOK": { "MacBook Air M1": "mba_m1.jpg", "MacBook Air M2": "mba_m2.jpg", "MacBook Pro 14": "mbp14.jpg", "MacBook Pro 16": "mbp16.jpg" }
+    };
+    
+    // Show/Hide Dropdown Menus
+    document.querySelectorAll(".dropdown-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            this.nextElementSibling.style.display = 
+                this.nextElementSibling.style.display === "block" ? "none" : "block";
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function(event) {
+        if (!event.target.matches(".dropdown-btn")) {
+            document.querySelectorAll(".dropdown-menu").forEach(menu => {
+                menu.style.display = "none";
+            });
+        }
+    });
+    
+    // Brand Selection 
+    brandMenu.addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            let selectedBrand = event.target.getAttribute("data-brand");
+            brandBtn.textContent = selectedBrand + " ▼";
+    
+            // Enable Config Dropdown
+            configBtn.disabled = false;
+            configBtn.textContent = "Configuration Select ▼";
+    
+            // Populate Config Dropdown
+            configMenu.innerHTML = "";
+            Object.keys(configurations[selectedBrand]).forEach(config => {
+                let li = document.createElement("li");
+                li.textContent = config;
+                configMenu.appendChild(li);
+            });
+    
+            // Store the selected brand in localStorage
+            localStorage.setItem('selectedBrand', selectedBrand);
+        }
+    });
+    
+    // Config Selection
+    configMenu.addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            let selectedConfig = event.target.textContent;
+            configBtn.textContent = selectedConfig + " ▼";
+    
+            let selectedBrand = localStorage.getItem('selectedBrand');
+            let selectedImage = configurations[selectedBrand][selectedConfig]; // Get Image
+    
+            // Store data in localStorage
+            localStorage.setItem('selectedConfig', selectedConfig);
+            localStorage.setItem('selectedImage', selectedImage);
+    
+            // Redirect to the new page
+            window.location.href = "tester.html";
+        }
+    });
+    
+
+
+// Search Function for Brand
+function searchLaptop(event) {
+    event.preventDefault(); // Form Submit Hone Se Rokna
+
+    let searchInput = document.getElementById("searchInput").value.trim().toUpperCase();
+    
+    if (configurations[searchInput]) {
+        // Save Brand in localStorage
+        localStorage.setItem('searchedBrand', searchInput);
+
+        // Redirect to Search Results Page
+        window.location.href = "search.html";
+    } else {
+        alert("Brand not found! Please enter a valid brand.");
+    }
+}
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.caraousel-slider-main');
     const dots = document.querySelectorAll('.dot');
@@ -75,28 +169,17 @@ window.addEventListener('resize', updateCarousel);
 updateCarousel();
 
 
-// let eliteLaptopsCollections = {
-//     laptopName: "ASUS ROG",
-//     laptopColor: ["Black","Grey","Red&Green"],
-//     laptopModelNum: "Rog Strix G18",
-
-// }
-
-// let search = prompt("Enter your collections");
-
-// console.log([eliteLaptopsCollections[search]]);
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Get all dropdown links
+   
     let categoryLinks = document.querySelectorAll(".dropdown-content a");
 
     categoryLinks.forEach(link => {
         link.addEventListener("click", function (event) {
-            event.preventDefault(); // Stop default action
+            event.preventDefault(); 
             
-            let category = this.getAttribute("data-category"); // Get category name
+            let category = this.getAttribute("data-category"); 
             
-            // Redirect to category page with query string
+        
             window.location.href = `category.html?category=${category}`;
         });
     });
@@ -131,3 +214,6 @@ document.getElementById("signup-btn").addEventListener("click", function() {
     var body = "Hello,\n\nI want to sign up for the latest deals. My email: " + email;
     window.location.href = "mailto:someone@example.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 });
+
+
+
