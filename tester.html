@@ -1,5 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Configuration Details</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
         /* #config-card { border: 2px solid #000; padding: 20px; width: 300px; margin: auto; } */
-      .display-img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px;}
+        .display-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="top-bar">
@@ -27,7 +39,7 @@
                 <i class="fab fa-bitcoin"></i>
                 <i class="fas fa-dollar-sign"></i>
                 <i class="fas fa-rupee-sign"></i>
-            </div>&nbsp;	&nbsp;
+            </div>&nbsp; &nbsp;
             <ul class="nav-links">
                 <div class="dropdown">
                     <button class="dropdown-btn" id="brand-btn">Brand Search ▼</button>
@@ -39,22 +51,24 @@
                         <li data-brand="MACBOOK">MACBOOK</li>
                     </ul>
                 </div>
-        
-                &nbsp; &nbsp; 
-        
-                
+
+                &nbsp; &nbsp;
+
+
                 <div class="dropdown">
                     <button class="dropdown-btn" id="config-btn" disabled>Configuration Select ▼</button>
                     <ul class="dropdown-menu" id="config-menu"></ul>
                 </div>
-            </div>
+                </div>
 
                 <li>
-    <form class="search-bar" id="popupunderconstruct-search" onsubmit="searchLaptop(event)">
-        <input type="text" id="searchInput" placeholder="Search..." />
-        <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-</li>
+
+                    <form class="search-bar" id="searchForm" onsubmit="searchLaptop(event)">
+                        <input type="text" id="searchInput" placeholder="Search a Brand..." />
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                </li>
                 <li class="dropdown">
                     <a href="#" title="Categories">Categories ⬇</a>
                     <div class="dropdown-content">
@@ -75,167 +89,164 @@
             </ul>
         </nav>
     </header>
- <br>
- <br>
-                <h2 id="selected-brand"></h2>
-                <br>
-                <p id="selected-config"></p>
-                <img class="display-img" id="selected-image" src="" alt="Laptop Image" width="390px">
-           
 
-        <div class="product-container">
-            <div class="product-card">
-                <img src="https://dlcdnwebimgs.asus.com/gain/31E0CE80-2EF1-4914-ABFF-B08DF7FB2CDC/w750/h470" alt="Rog Flow">
-                <h3>ROG FOLOW</h3>
-                <p class="price">450000 <i class="fas fa-rupee-sign"></i></p>
-                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <div class="product-card">
-                <img src="https://dlcdnwebimgs.asus.com/gain/251BB9FE-CD1A-4F9F-AA69-F0516CAF410A/w750/h470"
-                    alt="Rog Zephyrus">
-                <h3>ROG ZEPHYRUS</h3>
-                <p class="price">950000 <i class="fas fa-rupee-sign"></i></p>
-                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <div class="product-card">
-                <img src="https://dlcdnwebimgs.asus.com/gain/0075CD12-E145-49F5-916C-EF86E8691207/w750/h470"
-                    alt="Rog Strix">
-                <h3>ROG STRIX</h3>
-                <p class="price">1200000 <i class="fas fa-rupee-sign"></i></p>
-                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <div class="product-card">
-                <img src="https://dlcdnrog.asus.com/rog/media/1654040596988.webp" alt="Rog Flow Z13">
-                <h3>ROG FOLOW Z13</h3>
-                <p class="price">550000 <i class="fas fa-rupee-sign"></i></p>
-                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+    <br>
+    <br>
+    <h2 id="selected-brand"></h2>
+    <br>
+    <p id="selected-config"></p>
+    <img class="display-img" id="selected-image" src="" alt="Laptop Image" width="390px">
+
+    <div class="product-container">
+        <div class="product-card">
+            <img src="https://dlcdnwebimgs.asus.com/gain/31E0CE80-2EF1-4914-ABFF-B08DF7FB2CDC/w750/h470" alt="Rog Flow">
+            <h3>ROG FOLOW</h3>
+            <p class="price">450000 <i class="fas fa-rupee-sign"></i></p>
+            <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+        <div class="product-card">
+            <img src="https://dlcdnwebimgs.asus.com/gain/251BB9FE-CD1A-4F9F-AA69-F0516CAF410A/w750/h470"
+                alt="Rog Zephyrus">
+            <h3>ROG ZEPHYRUS</h3>
+            <p class="price">950000 <i class="fas fa-rupee-sign"></i></p>
+            <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+        <div class="product-card">
+            <img src="https://dlcdnwebimgs.asus.com/gain/0075CD12-E145-49F5-916C-EF86E8691207/w750/h470"
+                alt="Rog Strix">
+            <h3>ROG STRIX</h3>
+            <p class="price">1200000 <i class="fas fa-rupee-sign"></i></p>
+            <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+        <div class="product-card">
+            <img src="https://dlcdnrog.asus.com/rog/media/1654040596988.webp" alt="Rog Flow Z13">
+            <h3>ROG FOLOW Z13</h3>
+            <p class="price">550000 <i class="fas fa-rupee-sign"></i></p>
+            <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+    </div>
+
+    <h2 class="rahead">RELATED ARTICLES</h2>
+    <div class="container-middle">
+        <div class="article">
+            <img src="https://dlcdnrog.asus.com/rog/media/1674705497799.webp" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>Zephyrus vs Strix vs Flow: What's the difference between ROG laptops?</h3>
+                <p>ROG builds laptops for every kind of gamer. Find out which one is right for you!</p>
             </div>
         </div>
-    
-        <h2 class="rahead">RELATED ARTICLES</h2>
-        <div class="container-middle">
-            <div class="article">
-                <img src="https://dlcdnrog.asus.com/rog/media/1674705497799.webp" alt="">
-                <div class="article-content">
-                    <p class="post-tag">// POST</p>
-                    <h3>Zephyrus vs Strix vs Flow: What's the difference between ROG laptops?</h3>
-                    <p>ROG builds laptops for every kind of gamer. Find out which one is right for you!</p>
-                </div>
-            </div>
-            <div class="article">
-                <img src="https://dlcdnrog.asus.com/rog/media/166864109730.webp" alt="">
-                <div class="article-content">
-                    <p class="post-tag">// POST</p>
-                    <h3>How to set up and optimize your new ROG gaming laptop</h3>
-                    <p>We know you're eager to get fragging right away. But if you want to truly customize your experience,
-                        here's how to tune your machine for peak power.</p>
-                </div>
-            </div>
-            <div class="article">
-                <img src="https://dlcdnrog.asus.com/rog/media/1652407699784.webp" alt="">
-                <div class="article-content">
-                    <p class="post-tag">// POST</p>
-                    <h3>Unbridled gaming power and unlimited versatility: hands-on with the ROG Flow Z13</h3>
-                    <p>We go hands-on with the ROG Flow Z13 gaming tablet to experience truly portable PC gaming.</p>
-                </div>
-            </div>
-            <div class="article">
-                <img src="https://dlcdnwebimgs.asus.com/gain/8EFB7FD5-EEA2-46E8-8594-651683B67615/w600" alt="">
-                <div class="article-content">
-                    <p class="post-tag">// POST</p>
-                    <h3>The new ROG Flow X16 melds premium power with a portable design</h3>
-                    <p>ROG amps up mobile portability and versatility with the powerful all-new Flow X16.</p>
-                </div>
+        <div class="article">
+            <img src="https://dlcdnrog.asus.com/rog/media/166864109730.webp" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>How to set up and optimize your new ROG gaming laptop</h3>
+                <p>We know you're eager to get fragging right away. But if you want to truly customize your experience,
+                    here's how to tune your machine for peak power.</p>
             </div>
         </div>
-    
-    
-        <div class="footer-upper-cards" style="cursor: pointer;">
-    
-            <div class="footer-upper-card">
-                <img src="assets/side-view-gamer-playing-laptop.jpg" alt="Luxury Product Image">
+        <div class="article">
+            <img src="https://dlcdnrog.asus.com/rog/media/1652407699784.webp" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>Unbridled gaming power and unlimited versatility: hands-on with the ROG Flow Z13</h3>
+                <p>We go hands-on with the ROG Flow Z13 gaming tablet to experience truly portable PC gaming.</p>
             </div>
-    
-            <div class="footer-upper-card">
-                <img src="assets/gradient-view-illuminated-neon-gaming-desk-setup-with-keyboard.jpg"
-                    alt="Luxury Product Image">
+        </div>
+        <div class="article">
+            <img src="https://dlcdnwebimgs.asus.com/gain/8EFB7FD5-EEA2-46E8-8594-651683B67615/w600" alt="">
+            <div class="article-content">
+                <p class="post-tag">// POST</p>
+                <h3>The new ROG Flow X16 melds premium power with a portable design</h3>
+                <p>ROG amps up mobile portability and versatility with the powerful all-new Flow X16.</p>
             </div>
-    
-            <div class="footer-upper-card">
-                <img src="assets/gaming-setup-with-headphones-chair.jpg" alt="Luxury Product Image">
+        </div>
+    </div>
+    <div class="footer-upper-cards">
+        <div class="footer-upper-card">
+            <img src="assets/side-view-gamer-playing-laptop.jpg" alt="Luxury Product Image">
+        </div>
+
+        <div class="footer-upper-card">
+            <img src="assets/gradient-view-illuminated-neon-gaming-desk-setup-with-keyboard.jpg"
+                alt="Luxury Product Image">
+        </div>
+
+        <div class="footer-upper-card">
+            <img src="assets/gaming-setup-with-headphones-chair.jpg" alt="Luxury Product Image">
+        </div>
+
+        <div class="footer-upper-card">
+            <img src="assets/gradient-illuminated-neon-gaming-desk-setup-with-keyboard.jpg" alt="Luxury Product Image">
+        </div>
+    </div>
+    <div class="container-rg">
+        <div class="banner">
+            <img src="https://dlcdnwebimgs.asus.com/gain/FDFFE426-0A29-40D5-8E26-C838EB26CA8F" alt="Rog-gamers">
+            <div class="text-content-rg">
+                <!-- Optional text content if you need -->
+                <h1 style="color: white;">ROG Gamers</h1>
             </div>
-    
-            <div class="footer-upper-card">
-                <img src="assets/gradient-illuminated-neon-gaming-desk-setup-with-keyboard.jpg" alt="Luxury Product Image">
+        </div>
+    </div>
+    <footer>
+        <div class="foot-main">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT ROG</a>
+            <a href="#">NEWSROOM</a>
+            <a href="#">ACCESSIBILITY HELP</a>
+        </div>
+
+        <div class="social-icons-foot">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fas fa-gamepad"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitch"></i></a>
+            <a href="#"> <i class="fab fa-instagram"></i></a>
+            <a href="#"> <i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fas fa-globe"></i></a>
+        </div>
+
+        <div class="signup-section-foot">
+            <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
+            <input type="email" id="email" placeholder="Enter email address">
+            <button id="signup-btn">SUBMIT</button>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS OF USE NOTICE</a>
+                <a href="#">COOKIE SETTINGS</a>
             </div>
-            <div class="container-rg">
-                <div class="banner">
-                    <img src="https://dlcdnwebimgs.asus.com/gain/FDFFE426-0A29-40D5-8E26-C838EB26CA8F" alt="Rog-gamers">
-                    <div class="text-content-rg">
-                    </div>
-                </div>
-                <footer class="foot-main">
-                    <div>
-                        <a href="#">ABOUT ROG</a>
-                        <a href="#">HOME</a>
-                        <a href="#">NEWSROOM</a>
-                        <a href="#">ACCESSIBILITY HELP</a>
-                    </div>
-    
-                    <div class="social-icons-foot">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fas fa-gamepad"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitch"></i></a>
-                        <a href="#"> <i class="fab fa-instagram"></i></a>
-                        <a href="#"> <i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fas fa-globe"></i></a>
-                    </div>
-    
-                    <div class="signup-section-foot">
-                        <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
-                        <input type="email" id="email" placeholder="Enter email address">
-                        <button id="signup-btn">SUBMIT</button>
-                    </div>
-    
-                    <div class="footer-bottom">
-                        <div>
-                            <a href="#">PRIVACY POLICY</a>
-                            <a href="#">TERMS OF USE NOTICE</a>
-                            <a href="#">COOKIE SETTINGS</a>
-                        </div>
-                    </div>
-                    <div class="foot-imger">
-                        <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"
-                            ></a>
-                        </div>
-                    <div>
-                        ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
-                    </div>
-            </div>
-            </footer> 
+        </div>
+        <div class="foot-imger">
+            <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"></a>
+        </div>
+        <div>
+            ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
+        </div>
+        </div>
+    </footer>
+
+
+
     <script>
-    
+
         let brand = localStorage.getItem('selectedBrand');
         let config = localStorage.getItem('selectedConfig');
         let image = localStorage.getItem('selectedImage');
 
-      
+
         document.getElementById('selected-brand').textContent = "Brand: " + brand;
         document.getElementById('selected-config').textContent = "Model: " + config;
         document.getElementById('selected-image').src = "images/" + image; // Image Path Adjust
 
-       
+
         document.getElementById('selected-image').alt = config;
     </script>
     <script src="app.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-

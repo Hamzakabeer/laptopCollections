@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category Page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .banner-under-construct {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.banner-under-construct img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    </style>
 </head>
 
 <body>
-
-
     <header>
         <div class="top-bar">
             <marquee behavior="scroll" direction="left">☆FREE SHIPPING FOR ORDERS OVER PAKISTAN☆</marquee>
@@ -22,21 +33,39 @@
                         title="ROG GAMERS"></a><a href="index.html" title="Elite">ELITE</a><span class="highlight"
                     title="Store"> |
                     STORE</span></div>
-            <div class="payment-icons">
+            <div class="payment-icons" id="popupunderconstruct-currency">
                 <span title="We Accept" class="we-accept-nav">We Accept</span>
                 <i class="fab fa-bitcoin"></i>
                 <i class="fas fa-dollar-sign"></i>
                 <i class="fas fa-rupee-sign"></i>
-            </div>
+            </div>&nbsp;	&nbsp;
             <ul class="nav-links">
-                <li><a href="#" title="All Products">All Products</a></li>
-                <li>
-                    <form class="search-bar">
-                        <input type="text" placeholder="Search..." />
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </li>
-                <li><a href="#" title="Collection">Collections</a></li>
+                <div class="dropdown">
+                    <button class="dropdown-btn" id="brand-btn">Brand Search ▼</button>
+                    <ul class="dropdown-menu" id="brand-menu">
+                        <li data-brand="DELL">DELL</li>
+                        <li data-brand="HP">HP</li>
+                        <li data-brand="ROG">ROG</li>
+                        <li data-brand="LENOVO">LENOVO</li>
+                        <li data-brand="MACBOOK">MACBOOK</li>
+                    </ul>
+                </div>
+        
+                &nbsp; &nbsp; 
+        
+                
+                <div class="dropdown">
+                    <button class="dropdown-btn" id="config-btn" disabled>Configuration Select ▼</button>
+                    <ul class="dropdown-menu" id="config-menu"></ul>
+                </div>
+            </div>
+
+    <li>
+     <form class="search-bar" id="searchForm" onsubmit="searchLaptop(event)">
+        <input type="text" id="searchInput" placeholder="Search a Brand..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</li>
                 <li class="dropdown">
                     <a href="#" title="Categories">Categories ⬇</a>
                     <div class="dropdown-content">
@@ -52,15 +81,14 @@
                     </div>
                 </li>
 
-                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart" id="popupunderconstruct-cart"></i></a>
+                </li>
             </ul>
         </nav>
     </header>
-
-    <div>
+    
         <h1 id="category-title" style="text-align: center;">Category Name</h1>
-        </header>
-
+       
         <section id="category-content" style="text-align: center;">
             <p>Loading category details...</p>
         </section>
@@ -75,53 +103,232 @@
         <br>
 
 
+        <div class="carousel">
+            <div class="carousel-arrow left">&#8249;</div>
+            <div class="carousel-container" id="popupunderconstruct-slider-items">
+                <div class="carousel-item">
+                    <img src="assets/laptop-coursoel.png" alt="Laptops">
+                    <p>Laptops</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/motherboard-coursel.png" alt="Motherboards">
+                    <p>Motherboards</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/graphics-card-coursel.png" alt="Graphics Cards">
+                    <p>Graphics Cards</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/monitor-removebg-preview.png" alt="Monitors">
+                    <p>Monitors</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/phones-coursel.png" alt="Phones">
+                    <p>Phones</p>
+                </div>
+    
+                <div class="carousel-item">
+                    <img src="assets/cooling.png" alt="">
+                    <p>Cooling</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Desktops.png" alt="">
+                    <p>Desktops</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/powersupply.png" alt="">
+                    <p>Power Supply Units</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/externalgraphis.png" alt="">
+                    <p>External Graphics Docks</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/networking.png" alt="">
+                    <p>Networking</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/keyboards.png" alt="">
+                    <p>Keyboards</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/mice&mousepads.png" alt="">
+                    <p>Mice & Mouse Pads</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/headsetsaudio.png" alt="">
+                    <p>Headsets & Audio</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/cases.png" alt="">
+                    <p>Cases</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/apparelgear.png" alt="">
+                    <p>Apparel,Bags, & Gear</p>
+                </div>
+            </div>
+            <div class="carousel-arrow right">&#8250;</div>
+        </div>
+    
+        <div class="carousel-indicators">
+            <div class="active" data-index="0"></div>
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+            <div data-index="3"></div>
+            <div data-index="4"></div>
+            <div data-index="5"></div>
+            <div data-index="6"></div>
+            <div data-index="7"></div>
+            <div data-index="8"></div>
+            <div data-index="9"></div>
+            <div data-index="10"></div>
+            <div data-index="11"></div>
+            <div data-index="12"></div>
+            <div data-index="13"></div>
+            <div data-index="14"></div>
+        </div>
+    
+    
+        <div class="product-container">
+            <div class="product-card">
+                <img src="https://dlcdnwebimgs.asus.com/gain/31E0CE80-2EF1-4914-ABFF-B08DF7FB2CDC/w750/h470" alt="Rog Flow">
+                <h3>ROG FOLOW</h3>
+                <p class="price">450000 <i class="fas fa-rupee-sign"></i></p>
+                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <div class="product-card">
+                <img src="https://dlcdnwebimgs.asus.com/gain/251BB9FE-CD1A-4F9F-AA69-F0516CAF410A/w750/h470"
+                    alt="Rog Zephyrus">
+                <h3>ROG ZEPHYRUS</h3>
+                <p class="price">950000 <i class="fas fa-rupee-sign"></i></p>
+                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <div class="product-card">
+                <img src="https://dlcdnwebimgs.asus.com/gain/0075CD12-E145-49F5-916C-EF86E8691207/w750/h470"
+                    alt="Rog Strix">
+                <h3>ROG STRIX</h3>
+                <p class="price">1200000 <i class="fas fa-rupee-sign"></i></p>
+                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <div class="product-card">
+                <img src="https://dlcdnrog.asus.com/rog/media/1654040596988.webp" alt="Rog Flow Z13">
+                <h3>ROG FOLOW Z13</h3>
+                <p class="price">550000 <i class="fas fa-rupee-sign"></i></p>
+                <div class="card-icon-middle"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+        </div>
+    
+        <h2 class="rahead">RELATED ARTICLES</h2>
+        <div class="container-middle">
+            <div class="article">
+                <img src="https://dlcdnrog.asus.com/rog/media/1674705497799.webp" alt="">
+                <div class="article-content">
+                    <p class="post-tag">// POST</p>
+                    <h3>Zephyrus vs Strix vs Flow: What's the difference between ROG laptops?</h3>
+                    <p>ROG builds laptops for every kind of gamer. Find out which one is right for you!</p>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://dlcdnrog.asus.com/rog/media/166864109730.webp" alt="">
+                <div class="article-content">
+                    <p class="post-tag">// POST</p>
+                    <h3>How to set up and optimize your new ROG gaming laptop</h3>
+                    <p>We know you're eager to get fragging right away. But if you want to truly customize your experience,
+                        here's how to tune your machine for peak power.</p>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://dlcdnrog.asus.com/rog/media/1652407699784.webp" alt="">
+                <div class="article-content">
+                    <p class="post-tag">// POST</p>
+                    <h3>Unbridled gaming power and unlimited versatility: hands-on with the ROG Flow Z13</h3>
+                    <p>We go hands-on with the ROG Flow Z13 gaming tablet to experience truly portable PC gaming.</p>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://dlcdnwebimgs.asus.com/gain/8EFB7FD5-EEA2-46E8-8594-651683B67615/w600" alt="">
+                <div class="article-content">
+                    <p class="post-tag">// POST</p>
+                    <h3>The new ROG Flow X16 melds premium power with a portable design</h3>
+                    <p>ROG amps up mobile portability and versatility with the powerful all-new Flow X16.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-upper-cards">
+            <div class="footer-upper-card">
+                <img src="assets/side-view-gamer-playing-laptop.jpg" alt="Luxury Product Image">
+            </div>
+    
+            <div class="footer-upper-card">
+                <img src="assets/gradient-view-illuminated-neon-gaming-desk-setup-with-keyboard.jpg"
+                    alt="Luxury Product Image">
+            </div>
+    
+            <div class="footer-upper-card">
+                <img src="assets/gaming-setup-with-headphones-chair.jpg" alt="Luxury Product Image">
+            </div>
+    
+            <div class="footer-upper-card">
+                <img src="assets/gradient-illuminated-neon-gaming-desk-setup-with-keyboard.jpg" alt="Luxury Product Image">
+            </div>
+        </div>
         <div class="container-rg">
             <div class="banner">
                 <img src="https://dlcdnwebimgs.asus.com/gain/FDFFE426-0A29-40D5-8E26-C838EB26CA8F" alt="Rog-gamers">
                 <div class="text-content-rg">
+                    <!-- Optional text content if you need -->
+                    <h1 style="color: white;">ROG Gamers</h1>
                 </div>
             </div>
-            <footer class="foot-main">
-                <div>
-                    <a href="#">ABOUT ROG</a>
-                    <a href="#">HOME</a>
-                    <a href="#">NEWSROOM</a>
-                    <a href="#">ACCESSIBILITY HELP</a>
-                </div>
-
-                <div class="social-icons-foot">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-x-twitter"></i>
-                    <i class="fas fa-gamepad"></i>
-                    <i class="fab fa-youtube"></i>
-                    <i class="fab fa-twitch"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-tiktok"></i>
-                    <i class="fas fa-globe"></i>
-                </div>
-
-                <div class="signup-section-foot">
-                    <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
-                    <input type="email" id="email" placeholder="Enter email address">
-                    <button id="signup-btn">SUBMIT</button>
-                </div>
-
-                <div class="footer-bottom">
-                    <div>
-                        <a href="#">PRIVACY POLICY</a>
-                        <a href="#">TERMS OF USE NOTICE</a>
-                        <a href="#">COOKIE SETTINGS</a>
-                        <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"
-                                style=" display: block; 
-           margin: 0 auto; margin-top: 30px"></a>
-                    </div>
-                </div>
-                <div>
-                    ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
-                </div>
         </div>
-        </footer>
+                <footer>
+                    <div class="foot-main">
+                        <a href="#">HOME</a>
+                        <a href="#">ABOUT ROG</a>
+                        <a href="#">NEWSROOM</a>
+                        <a href="#">ACCESSIBILITY HELP</a>
+                    </div>
+    
+                    <div class="social-icons-foot">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fas fa-gamepad"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                        <a href="#"> <i class="fab fa-instagram"></i></a>
+                        <a href="#"> <i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+    
+                    <div class="signup-section-foot">
+                        <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
+                        <input type="email" id="email" placeholder="Enter email address">
+                        <button id="signup-btn">SUBMIT</button>
+                    </div>
+    
+                    <div class="footer-bottom">
+                        <div>
+                            <a href="#">PRIVACY POLICY</a>
+                            <a href="#">TERMS OF USE NOTICE</a>
+                            <a href="#">COOKIE SETTINGS</a>
+                        </div>
+                    </div>
+                    <div class="foot-imger">
+                        <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"
+                            ></a>
+                        </div>
+                    <div>
+                        ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
+                    </div>
+            </div>
+            </footer>
+    
+
+
+       
             <script src="category.js"></script>
+            <script src="app.js"></script>
 
         </div>
 

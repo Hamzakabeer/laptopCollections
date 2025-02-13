@@ -58,6 +58,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,11 +66,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Configuration Details</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        .model-card { border: 2px solid #000; padding: 10px; margin: 10px; display: inline-block; cursor: pointer; }
-        img { max-width: 150px; height: auto; display: block; margin: auto; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .model-card {
+            border: 2px solid #000;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .searcher img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="top-bar">
@@ -85,7 +104,7 @@
                 <i class="fab fa-bitcoin"></i>
                 <i class="fas fa-dollar-sign"></i>
                 <i class="fas fa-rupee-sign"></i>
-            </div>&nbsp;	&nbsp;
+            </div>&nbsp; &nbsp;
             <ul class="nav-links">
                 <div class="dropdown">
                     <button class="dropdown-btn" id="brand-btn">Brand Search ▼</button>
@@ -97,22 +116,24 @@
                         <li data-brand="MACBOOK">MACBOOK</li>
                     </ul>
                 </div>
-        
-                &nbsp; &nbsp; 
-        
-                
+
+                &nbsp; &nbsp;
+
+
                 <div class="dropdown">
                     <button class="dropdown-btn" id="config-btn" disabled>Configuration Select ▼</button>
                     <ul class="dropdown-menu" id="config-menu"></ul>
                 </div>
-            </div>
+                </div>
 
                 <li>
-    <form class="search-bar" id="popupunderconstruct-search" onsubmit="searchLaptop(event)">
-        <input type="text" id="searchInput" placeholder="Search..." />
-        <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-</li>
+
+                    <form class="search-bar" id="searchForm" onsubmit="searchLaptop(event)">
+                        <input type="text" id="searchInput" placeholder="Search a Brand..." />
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                </li>
                 <li class="dropdown">
                     <a href="#" title="Categories">Categories ⬇</a>
                     <div class="dropdown-content">
@@ -127,18 +148,19 @@
                         <a href="#" data-category="phones" title="Phones">Phones</a>
                     </div>
                 </li>
+
                 <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart" id="popupunderconstruct-cart"></i></a>
                 </li>
             </ul>
         </nav>
     </header>
- <br>
- <br>
 
-        <h1>Search Results</h1>
+    <br>
+    <br>
+
+    <h1>Search Results</h1>
     <h2 id="searched-brand"></h2>
-    <div id="models-container"></div>
-
+    <div id="models-container" class="searcher"></div>
 
     <div class="product-container">
         <div class="product-card">
@@ -205,10 +227,7 @@
             </div>
         </div>
     </div>
-
-
-    <div class="footer-upper-cards" style="cursor: pointer;">
-
+    <div class="footer-upper-cards">
         <div class="footer-upper-card">
             <img src="assets/side-view-gamer-playing-laptop.jpg" alt="Luxury Product Image">
         </div>
@@ -225,97 +244,94 @@
         <div class="footer-upper-card">
             <img src="assets/gradient-illuminated-neon-gaming-desk-setup-with-keyboard.jpg" alt="Luxury Product Image">
         </div>
-        <div class="container-rg">
-            <div class="banner">
-                <img src="https://dlcdnwebimgs.asus.com/gain/FDFFE426-0A29-40D5-8E26-C838EB26CA8F" alt="Rog-gamers">
-                <div class="text-content-rg">
-                </div>
+    </div>
+    <div class="container-rg">
+        <div class="banner">
+            <img src="https://dlcdnwebimgs.asus.com/gain/FDFFE426-0A29-40D5-8E26-C838EB26CA8F" alt="Rog-gamers">
+            <div class="text-content-rg">
+                <!-- Optional text content if you need -->
+                <h1 style="color: white;">ROG Gamers</h1>
             </div>
-            <footer class="foot-main">
-                <div>
-                    <a href="#">ABOUT ROG</a>
-                    <a href="#">HOME</a>
-                    <a href="#">NEWSROOM</a>
-                    <a href="#">ACCESSIBILITY HELP</a>
-                </div>
-
-                <div class="social-icons-foot">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#"><i class="fas fa-gamepad"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-twitch"></i></a>
-                    <a href="#"> <i class="fab fa-instagram"></i></a>
-                    <a href="#"> <i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fas fa-globe"></i></a>
-                </div>
-
-                <div class="signup-section-foot">
-                    <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
-                    <input type="email" id="email" placeholder="Enter email address">
-                    <button id="signup-btn">SUBMIT</button>
-                </div>
-
-                <div class="footer-bottom">
-                    <div>
-                        <a href="#">PRIVACY POLICY</a>
-                        <a href="#">TERMS OF USE NOTICE</a>
-                        <a href="#">COOKIE SETTINGS</a>
-                    </div>
-                </div>
-                <div class="foot-imger">
-                    <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"
-                        ></a>
-                    </div>
-                <div>
-                    ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
-                </div>
         </div>
-        </footer>
+    </div>
+    <footer>
+        <div class="foot-main">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT ROG</a>
+            <a href="#">NEWSROOM</a>
+            <a href="#">ACCESSIBILITY HELP</a>
+        </div>
 
-        <script>
-            // Get searched brand from localStorage
-            let brand = localStorage.getItem('searchedBrand');
-            let modelsContainer = document.getElementById('models-container');
-            let configurations = {
-                "DELL": { "XPS 13": "xps13.jpg", "XPS 15": "xps15.jpg", "Inspiron 14": "inspiron14.jpg", "Inspiron 15": "inspiron15.jpg" },
-                "HP": { "Pavilion 14": "pavilion14.jpg", "Pavilion 15": "pavilion15.jpg", "Spectre x360": "spectre.jpg", "Omen 16": "omen16.jpg" },
-                "ROG": { "Zephyrus G14": "zephyrusg14.jpg", "Zephyrus G15": "zephyrusg15.jpg", "Strix Scar 17": "strixscar17.jpg", "Strix G16": "strixg16.jpg" },
-                "LENOVO": { "ThinkPad X1": "thinkpadx1.jpg", "ThinkPad T14": "thinkpadt14.jpg", "Legion 5": "legion5.jpg", "Legion 7": "legion7.jpg" },
-                "MACBOOK": { "MacBook Air M1": "mba_m1.jpg", "MacBook Air M2": "mba_m2.jpg", "MacBook Pro 14": "mbp14.jpg", "MacBook Pro 16": "mbp16.jpg" }
-            };
-    
-            // Display searched brand
-            document.getElementById('searched-brand').textContent = "Brand: " + brand;
-    
-            // Show all models for searched brand
-            if (configurations[brand]) {
-                Object.keys(configurations[brand]).forEach(model => {
-                    let modelDiv = document.createElement('div');
-                    modelDiv.className = 'model-card';
-                    modelDiv.innerHTML = `
+        <div class="social-icons-foot">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fas fa-gamepad"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitch"></i></a>
+            <a href="#"> <i class="fab fa-instagram"></i></a>
+            <a href="#"> <i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fas fa-globe"></i></a>
+        </div>
+
+        <div class="signup-section-foot">
+            <label for="email">GET THE LATEST DEALS AND MORE</label>&nbsp;&nbsp;&nbsp;
+            <input type="email" id="email" placeholder="Enter email address">
+            <button id="signup-btn">SUBMIT</button>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS OF USE NOTICE</a>
+                <a href="#">COOKIE SETTINGS</a>
+            </div>
+        </div>
+        <div class="foot-imger">
+            <a href="#"><img src="assets/Screenshot 2025-02-06 193149.png" alt="ROG Logo" title="Rog-gamers"></a>
+        </div>
+        <div>
+            ©ASUSTeK COMPUTER INC. ALL RIGHTS RESERVED.
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get searched brand from localStorage
+        let brand = localStorage.getItem('searchedBrand');
+        let modelsContainer = document.getElementById('models-container');
+        let configurations = {
+            "DELL": { "XPS 13": "xps13.jpg", "XPS 15": "xps15.jpg", "Inspiron 14": "inspiron14.jpg", "Inspiron 15": "inspiron15.jpg" },
+            "HP": { "Pavilion 14": "pavilion14.jpg", "Pavilion 15": "pavilion15.jpg", "Spectre x360": "spectre.jpg", "Omen 16": "omen16.jpg" },
+            "ROG": { "Zephyrus G14": "zephyrusg14.jpg", "Zephyrus G15": "zephyrusg15.jpg", "Strix Scar 17": "strixscar17.jpg", "Strix G16": "strixg16.jpg" },
+            "LENOVO": { "ThinkPad X1": "thinkpadx1.jpg", "ThinkPad T14": "thinkpadt14.jpg", "Legion 5": "legion5.jpg", "Legion 7": "legion7.jpg" },
+            "MACBOOK": { "MacBook Air M1": "mba_m1.jpg", "MacBook Air M2": "mba_m2.jpg", "MacBook Pro 14": "mbp14.jpg", "MacBook Pro 16": "mbp16.jpg" }
+        };
+
+        // Display searched brand
+        document.getElementById('searched-brand').textContent = "Brand: " + brand;
+
+        // Show all models for searched brand
+        if (configurations[brand]) {
+            Object.keys(configurations[brand]).forEach(model => {
+                let modelDiv = document.createElement('div');
+                modelDiv.className = 'model-card';
+                modelDiv.innerHTML = `
                         <h3>${model}</h3>
                         <img src="images/${configurations[brand][model]}" alt="${model}">
                     `;
-                    modelDiv.onclick = function () {
-                        localStorage.setItem('selectedConfig', model);
-                        localStorage.setItem('selectedImage', configurations[brand][model]);
-                        window.location.href = "tester.html"; // Redirect to Details Page
-                    };
-                    modelsContainer.appendChild(modelDiv);
-                });
-            } else {
-                modelsContainer.innerHTML = "<p>No models found for this brand.</p>";
-            }
-        </script>
-          <script src="app.js"></script>
+                modelDiv.onclick = function () {
+                    localStorage.setItem('selectedConfig', model);
+                    localStorage.setItem('selectedImage', configurations[brand][model]);
+                    window.location.href = "tester.html"; // Redirect to Details Page
+                };
+                modelsContainer.appendChild(modelDiv);
+            });
+        } else {
+            modelsContainer.innerHTML = "<p>No models found for this brand.</p>";
+        }
+    </script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
