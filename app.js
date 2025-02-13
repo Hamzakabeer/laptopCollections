@@ -196,9 +196,6 @@ document.getElementById("popupunderconstruct-slider-items").onclick = function()
 document.getElementById("popupunderconstruct-currency").onclick = function() {
     alert("UpComing Soon");
 };
-document.getElementById("popupunderconstruct-search").onclick = function() {
-    alert("!!! Warning");
-};
 
 
 

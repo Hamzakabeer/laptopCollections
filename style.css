@@ -610,23 +610,16 @@ footer a {
     text-decoration: none;
     margin: 0 21px;
 }
-/* 
 .social-icons-foot {
     display: flex;
     justify-content: center;
     margin: 15px 0;
     padding: 1.2rem;
-} */
-.social-icons-foot {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-    padding: 1.2rem;
-    flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
 .social-icons-foot a {
-    margin: 0.5rem; /* Add some space between the icons */
+    margin: 0.5rem; 
 }
 
 .social-icons-foot i {
@@ -662,32 +655,20 @@ footer a {
     padding: 3rem;
 }
 
-/* .footer-bottom {
-    display: flex;
-  justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-footer .footer-bottom div {
-    display: flex;
-    justify-content: center;
-} */
-
 .footer-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 2rem;
-    text-align: center; /* Ensures text alignment in the center */
+    text-align: center;
 }
 
 footer .footer-bottom div {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Space between links */
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 1rem;
+    flex-wrap: wrap; 
 }
 .foot-imger{
 display: flex;
@@ -762,8 +743,8 @@ padding: 2rem;
         margin-bottom: 10px;
     }
     .social-icons-foot {
-        flex-direction: row; /* Change to column layout */
-        align-items: center; /* Center the items */
+        flex-direction: row; 
+        align-items: center;
     }
     .footer-upper-card {
         width: calc(50% - 20px);
@@ -784,22 +765,18 @@ padding: 2rem;
         border-radius: 4px;
     }
     .footer-bottom {
-        flex-direction: row; /* Keep it horizontal */
-        align-items: center; /* Center content */
+        flex-direction: row; 
+        align-items: center; 
     }
 
     footer .footer-bottom div {
-        flex-wrap: wrap; /* Allow links to wrap as needed */
-        justify-content: center; /* Center each row of links */
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
 
     footer .footer-bottom div a {
-        margin: 0.5rem; /* Space between links */
+        margin: 0.5rem; 
     }
-
-    /* .footer-bottom {
-        flex-direction: column;
-    } */
 }
 
 @media (max-width: 600px) {
@@ -852,9 +829,4 @@ padding: 2rem;
     .footer-upper-card {
         width: 100%;
     }
-
-    /* .footer-bottom img {
-        display: block;
-        margin: 0 auto;
-    } */
 }
