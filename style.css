@@ -610,12 +610,23 @@ footer a {
     text-decoration: none;
     margin: 0 21px;
 }
-
+/* 
 .social-icons-foot {
     display: flex;
     justify-content: center;
     margin: 15px 0;
     padding: 1.2rem;
+} */
+.social-icons-foot {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 1.2rem;
+    flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+}
+
+.social-icons-foot a {
+    margin: 0.5rem; /* Add some space between the icons */
 }
 
 .social-icons-foot i {
@@ -735,7 +746,10 @@ padding: 2rem;
         margin-right: 0;
         margin-bottom: 10px;
     }
-
+    .social-icons-foot {
+        flex-direction: row; /* Change to column layout */
+        align-items: center; /* Center the items */
+    }
     .footer-upper-card {
         width: calc(50% - 20px);
     }
@@ -785,6 +799,9 @@ padding: 2rem;
     .footer a {
         display: block;
         margin: 0 auto;
+    }
+    .social-icons-foot{
+
     }
 }
 
